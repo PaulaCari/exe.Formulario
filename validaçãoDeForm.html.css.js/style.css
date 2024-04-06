@@ -1,0 +1,143 @@
+/*criar variaveis  que fican disponivel glovalmente*/
+:root {
+    --primary-color: #fd951f;
+    --bg-color: #130f0d;
+    --tex-color: #f0f0f5;
+    --light-color: rgba(255, 255, 255, 0.04);
+}
+
+/*reiniciada dos elementos*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*respeta a largura dos padding  3:11*/
+}
+
+html {
+    font-family: poppins, sans-serif;
+    height: 100%;
+}
+
+body {
+    height: 100vh;
+    /*100% de altura*/
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--bg-color);
+    /*fundo da tela #130f0d*/
+    color: var(--tex-color)
+        /*cor do texto  #f0f0f5*/
+}
+
+/*copie o codigo de style do broostraps*/
+form {
+    background: rgba(255, 255, 255, 0.03);
+    /*branco com transparença de 0.03*/
+
+    width: 100%;
+    max-width: 500px;
+
+    margin: 32px auto;
+    padding: 32px 64px;
+
+    display: flex;
+    /*alinha na horizontal*/
+    flex-direction: column;
+}
+
+form h2 {
+    margin-bottom: 32px;
+}
+
+div.input {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+input,
+button {
+    /* reset appeareance */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    /*deletart este bloco*/
+
+    /* box caixa */
+    width: 100%;
+
+    padding: 16px 0;
+
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    /*linhas*/
+
+    background-color: transparent;
+    /*sem não tirar fica um quadrado branco grande*/
+
+    outline: none;
+    /*se não tirar quando prenche se cria um quadrado*/
+
+    /* text */
+    color: var(--text-color);
+    font-size: 1em;
+    border-radius: 5px;
+    /*inclui*/
+    cursor: pointer;
+    transition:  0.3s;
+    /*inclui*/
+
+}
+
+button {
+    margin-top: 16px;
+    background-color: var(--primary-color);
+}
+
+input~label {
+    /*~significa que esta procurandoo irmão do input no caso label*/
+    position: absolute;
+    top: 16px;
+    left: 0;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    transition: .4s;
+}
+
+input:focus~label,
+/*este bloque faz a movimento do nome e email para acima para prencher, faz um movimento para acima*/
+input:valid~label {
+    transform: translateY(-24px);
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+}
+
+
+.input span.error {
+    display: flex;
+    padding: 0;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.input span.error.active {
+    border: 1px solid red;
+    padding: 0.4em;
+}
+
+
+
+
+
+
+
+
+
+/*h2{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
